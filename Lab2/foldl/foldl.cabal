@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 18846075edbe1d44518effe1d88e0f73918f8df45864ad9f67d12e07d0c29fa4
+
+name:           foldl
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/foldl#readme>
+homepage:       https://github.com/githubuser/foldl#readme
+bug-reports:    https://github.com/githubuser/foldl/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/foldl
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_foldl
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable foldl-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_foldl
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , foldl
+  default-language: Haskell2010
+
+test-suite foldl-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_foldl
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , foldl
+  default-language: Haskell2010
