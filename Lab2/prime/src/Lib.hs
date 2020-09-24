@@ -3,14 +3,19 @@ module Lib
   ) where
 
 someFunc :: IO ()
-someFunc = print $ firstNPrimes 1000
+someFunc = print $ tail $ head $ dropWhile (\array -> head array < 1000) firstNPrimeArrays
 
 firstNPrimes :: Integer -> [Integer]
 firstNPrimes count
   | count == 0 = []
   | otherwise = appendPrime $ firstNPrimes (count - 1)
 
--- Собрать бесконечный список из итеративного вариант решета Эратосфена (который немного эффективнее) так и не получилось.
+-- Собрать бесконечный список из итеративного вариант решета 
+-- Эратосфена (который немного эффективнее) так и не получилось.
+-- Получилась только такая "химера" на iterate.
+firstNPrimeArrays :: [[Integer]]
+firstNPrimeArrays = tail $ iterate (appendPrime) []
+
 appendPrime :: [Integer] -> [Integer] 
 appendPrime known
   | null known = [2]
@@ -21,4 +26,4 @@ verySlowPrimes :: [Integer]
 verySlowPrimes = sieve [2..]
 
 sieve :: [Integer] -> [Integer]
-sieve (p : xs) = p : sieve [x | x <− xs, x ‘mod‘ p > 0]
+sieve (p:xs) = p : sieve [ n | n <- xs, mod n p > 0]
