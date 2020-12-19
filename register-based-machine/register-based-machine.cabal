@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 97939111237bd9c4ee5cf361b9c7e8d913742a30528265a7a4bb07a66c0c9c37
+
+name:           register-based-machine
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/register-based-machine#readme>
+homepage:       https://github.com/githubuser/register-based-machine#readme
+bug-reports:    https://github.com/githubuser/register-based-machine/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/register-based-machine
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_register_based_machine
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , mtl
+    , transformers
+    , containers
+  default-language: Haskell2010
+
+executable register-based-machine-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_register_based_machine
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , register-based-machine
+    , containers
+  default-language: Haskell2010
+
+test-suite register-based-machine-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_register_based_machine
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , register-based-machine
+  default-language: Haskell2010
